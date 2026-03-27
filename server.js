@@ -68,9 +68,7 @@ app.put('/servicos/:id', (req, res) => {
   );
 });
 
-/*app.listen(3000, () => {
-  console.log('Servidor rodando na porta 3000 🚀');
-});*/
+
 
 //codigos para teste de funcionameto
 
