@@ -62,6 +62,17 @@ app.put('/servicos/:id', (req, res) => {
   console.log('Servidor rodando na porta 3000 🚀');
 });*/
 
+//codigos para teste de funcionameto
+
+app.get('/', (req, res) => {
+  res.send('API rodando 🔥');
+});
+
+app.get('/servicos', (req, res) => {
+  res.json([{ status: 'API online 🔥' }]);
+});
+
+//codigos para teste de funcionameto
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
