@@ -35,13 +35,23 @@ app.post('/servicos', (req, res) => {
   });
 });
 
-// listar serviços
+app.get('/', (req, res) => {
+  res.send('API rodando 🔥');
+});
+
+// listar serviços (oficial)
 app.get('/servicos', (req, res) => {
   db.query('SELECT * FROM servicos', (err, result) => {
     if (err) return res.status(500).json(err);
     res.json(result);
   });
 });
+/*app.get('/servicos', (req, res) => {
+  db.query('SELECT * FROM servicos', (err, result) => {
+    if (err) return res.status(500).json(err);
+    res.json(result);
+  });
+});*/
 
 // atualizar status
 app.put('/servicos/:id', (req, res) => {
@@ -64,15 +74,20 @@ app.put('/servicos/:id', (req, res) => {
 
 //codigos para teste de funcionameto
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
   res.send('API rodando 🔥');
 });
 
 app.get('/servicos', (req, res) => {
   res.json([{ status: 'API online 🔥' }]);
-});
+});*/
 
 //codigos para teste de funcionameto
+
+app.get('/servicos', (req, res) => {
+  res.json([{ status: 'API online 🔥' }]);
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
